@@ -1,0 +1,30 @@
+{
+  "name": "goreleaser_test",
+  "version": "0.1.0",
+  "description": "first npm package",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icecream78/goreleaser_test.git"
+  },
+  "keywords": [
+    "GO",
+    "JS"
+  ],
+  "author": "Fa[K]eR?!",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icecream78/goreleaser_test/issues"
+  },
+  "homepage": "https://github.com/icecream78/goreleaser_test#readme",
+  "dependencies": {
+    "go-npm": "^0.1.9"
+  },
+  "postinstall": "go-npm install",
+  "preuninstall": "go-npm uninstall",
+  "goBinary": {
+    "name": "goreleaser_test",
+    "path": "./bin",
+    "url": "https://github.com/icecream78/goreleaser_test/releases/download/v{{version}}/myGoPackage_{{version}}_{{platform}}_{{arch}}.tar.gz"
+  }
+}
