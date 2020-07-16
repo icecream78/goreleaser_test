@@ -1,6 +1,6 @@
 {
   "name": "goreleaser_test",
-  "version": "0.1.0",
+  "version": "0.1.7",
   "description": "first npm package",
   "main": "index.js",
   "repository": {
@@ -18,13 +18,16 @@
   },
   "homepage": "https://github.com/icecream78/goreleaser_test#readme",
   "dependencies": {
-    "go-npm": "^0.1.9"
+    "binwrap": "^0.2.2"
   },
-  "postinstall": "go-npm install",
-  "preuninstall": "go-npm uninstall",
-  "goBinary": {
-    "name": "goreleaser_test",
-    "path": "./bin",
-    "url": "https://github.com/icecream78/goreleaser_test/releases/download/v{{version}}/myGoPackage_{{version}}_{{platform}}_{{arch}}.tar.gz"
+  "files": [
+    "index.js",
+    "bin"
+  ],
+  "scripts": {
+    "install": "binwrap-install",
+    "prepare": "binwrap-prepare",
+    "test": "binwrap-test",
+    "prepublish": "npm test"
   }
 }
