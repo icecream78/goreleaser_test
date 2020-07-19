@@ -1,35 +1,8 @@
-project_name: goreleaser_test
 builds:
-- env:
-  - CGO_ENABLED=0
-  goos:
-    - linux
-    - darwin
-    - windows
-  goarch:
+  - binary: drum-roll
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
       - amd64
-      - 386
-archives:
-  - id: goreleaser_test
-    format: gz
-    files:
-    - none*
-    replacements:
-      windows: Windows
-      darwin: MacOS
-      linux: Linux
-      386: i386
-      amd64: x86_64
-    format_overrides:
-    - goos: windows
-      format: zip
-checksum:
-  name_template: 'checksums.txt'
-snapshot:
-  name_template: "{{ .Tag }}-next"
-changelog:
-  sort: asc
-  filters:
-    exclude:
-    - '^docs:'
-    - '^test:'
