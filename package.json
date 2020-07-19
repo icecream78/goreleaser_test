@@ -1,6 +1,6 @@
 {
   "name": "goreleaser_test",
-  "version": "0.1.11",
+  "version": "0.1.18",
   "description": "first npm package",
   "main": "index.js",
   "repository": {
@@ -22,8 +22,11 @@
     "preuninstall": "go-npm uninstall"
   },
   "goBinary": {
-    "name": "goreleaser_test",
-    "path": "./bin",
-    "url": "https://github.com/user/myrepo/releases/download/v0.1.6/goreleaser_test_{{platform}}_{{arch}}.tar.gz"
+    "name": "drum-roll",
+    "path": "./bbn",
+    "url": "https://github.com/icecream78/goreleaser_test/releases/download/v0.1.6/goreleaser_test_0.1.6_{{platform}}_{{arch}}.tar.gz"
+  },
+  "dependencies": {
+    "go-npm": "^0.1.9"
   }
 }
